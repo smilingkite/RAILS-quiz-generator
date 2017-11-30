@@ -1,4 +1,11 @@
 <%= form_for @quiz do |f| %>
+
+<ul>
+  <% @quiz.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 
