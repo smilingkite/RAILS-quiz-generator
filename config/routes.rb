@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root "quizzes#index"
+
+  get "quizzes" => "quizzes#index"
+  get 'quizzes/new' => "quizzes#new", as: :new_quiz
+  get "quizzes/:id" => "quizzes#show", as: :quiz
+
+  post "quizzes" => "quizzes#create"
 end
