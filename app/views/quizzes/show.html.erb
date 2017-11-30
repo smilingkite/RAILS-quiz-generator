@@ -1,1 +1,4 @@
 <h1><%= @quiz.name %></h1>
+
+<%= link_to "[Edit]", edit_quiz_path(@quiz.id) %>
+<%= link_to "[Delete]", quiz_path(@quiz.id), method: :delete, data: { confirm: "Are you sure?" } %>
