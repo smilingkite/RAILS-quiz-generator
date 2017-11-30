@@ -1,11 +1,12 @@
 <h1><%= @quiz.name %></h1>
 
 <% if @quiz.questions.any? %>
-  <ul>
+  <ol>
     <% @quiz.questions.each do |q| %>
+      <img src=<%= q.image_url%> />
       <li><%= q.vraag %></li>
     <% end %>
-  </ul>
+  </ol>
 <% else %>
   <p>There are no questions in this quiz (yet).</p>
 <% end %>
