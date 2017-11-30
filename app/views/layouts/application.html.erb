@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <%= link_to "[All Quizzes]", root_path %>, <%= link_to "[New Quiz]", new_quiz_path %>
+    </div>
   </body>
 </html>
