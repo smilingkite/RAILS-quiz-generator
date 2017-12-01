@@ -1,24 +1,18 @@
-# README
+# Quiz Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Projected database setup:
 
-Things you may want to cover:
+quiz (name)
 
-* Ruby version
+> one to many
 
-* System dependencies
+questions (question, image)
 
-* Configuration
+> one to many
 
-* Database creation
+answers (t/f, answer)
 
-* Database initialization
+> join table answers_users (userid, answerid)
 
-* How to run the test suite
+user (name)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
