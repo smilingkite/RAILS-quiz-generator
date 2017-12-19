@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 # use jquery
 gem 'jquery-rails', '~> 4.3.1'
+# Use Devise for authentication
+gem 'devise', '~> 4.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
