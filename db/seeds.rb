@@ -1,6 +1,7 @@
+Answer.destroy_all
 Question.destroy_all
 Quiz.destroy_all
-Answer.destroy_all
+
 
 quiz1 = Quiz.create!({name: "Women in Computer Science QUIZ"})
 
