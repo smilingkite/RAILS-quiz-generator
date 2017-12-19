@@ -30,11 +30,6 @@ Answer.create!([
   {true: false, answertext: 'Grace Hopper', question: turing}
 ])
   
-
-
-
-
-
 quiz_count = Quiz.count
 question_count = Question.count
 puts "#{quiz_count} quizzes were created."
