@@ -4,7 +4,8 @@
   <ol>
     <% @quiz.questions.each do |q| %>
       <img src=<%= q.image_url%> />
-      <li><%= q.vraag %></li>
+      <li><%= q.vraag %>
+      </li>
     <% end %>
   </ol>
 <% else %>

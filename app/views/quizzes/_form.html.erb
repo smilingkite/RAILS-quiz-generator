@@ -9,5 +9,8 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.submit (@quiz.new_record? ? "Create" : "Update") %>
+  <%= f.vraag.label :vraag %>
+  <%= f.vraag.text_field :vraag %>
+
+  <%= f.submit (@quiz.new_record? ? "Create Quiz" : "Update Quiz") %>
 <% end %>
