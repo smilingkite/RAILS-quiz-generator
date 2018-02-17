@@ -3,4 +3,7 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :vraag, presence: true
+  accepts_nested_attributes_for :answers
+  
+  attr :answer
 end

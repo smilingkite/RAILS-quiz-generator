@@ -15,7 +15,12 @@
       <%= yield %>
     </div>
     <div id="footer">
-      <%= link_to "[All Quizzes]", root_path %>, <%= link_to "[New Quiz]", new_quiz_path %>
+      <%= link_to "[All Quizzes]", root_path %>, <%= link_to "[New Quiz]", new_quiz_path %>, 
+      <% if user_signed_in? %>
+       <%= link_to "[Log out]", destroy_user_session_path,  :method => :delete %>
+      <% else %>
+        <%= link_to "[Log In]", new_user_session_path %>
+      <% end %>
     </div>
   </body>
 </html>

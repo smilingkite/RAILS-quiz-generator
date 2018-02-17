@@ -1,10 +1,13 @@
 class QuizzesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @quizzes = Quiz.all
   end
 
   def show
     @quiz = Quiz.find(params[:id])
+    @user = current_user
   end
 
 # renders a form for creating a new resource - HTTP GET.

@@ -1,16 +1,45 @@
 <h1><%= @quiz.name %></h1>
-
-<% if @quiz.questions.any? %>
-  <ol>
-    <% @quiz.questions.each do |q| %>
-      <img src=<%= q.image_url%> />
-      <li><%= q.vraag %>
-      </li>
+<ul>
+<% current_user.answers_user.includes(:answer).each do |a_u| %>
+  <li>
+    <%= a_u.answer.answertext %>, 
+    <%= a_u.answer.true %>
+    <% if !a_u.answer.true?  %>, the right answer is: 
+    <%= a_u.answer.question.answers.where(true:true).first.answertext  %>
+    to the question: 
+    <%= a_u.answer.question.vraag %>
     <% end %>
-  </ol>
-<% else %>
-  <p>There are no questions in this quiz (yet).</p>
+  </li>
 <% end %>
+</ul>
+<%= form_for @quiz, :url => user_path do |f| %>
+  <% if @quiz.questions.any? %>
+    <%= f.hidden_field :id %>
+    <ol>
+      <%= f.fields_for :questions do |q_form| %>
+        <img src=<%= q_form.object.image_url%> />
+        <li><%= q_form.object.vraag %>
+        <ul>  
+         
+        <% q_form.object.answers.each do |answer| %>
+          <%# q.answers.each do |a| %>
+           
+            <li>
+              <%# a_form.radio_button :answer %>
+              <%= q_form.radio_button :answer, answer.id  %>
+              <%= label :answer, answer.answertext  %>
+            </li>
 
+          <%# end %>
+          <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ol>
+  <% else %>
+    <p>There are no questions in this quiz (yet).</p>
+  <% end %>
+  <%= f.submit %>
+<% end %>
 <%= link_to "[Edit]", edit_quiz_path(@quiz.id) %>
 <%= link_to "[Delete]", quiz_path(@quiz.id), method: :delete, data: { confirm: "Are you sure?" } %>
