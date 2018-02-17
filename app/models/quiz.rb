@@ -8,4 +8,8 @@ class Quiz < ApplicationRecord
   scope :order_by_name, -> { order(:name) }
 
   accepts_nested_attributes_for :questions
+
+  def total_questions
+    questions.size
+  end
 end

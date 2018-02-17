@@ -8,4 +8,21 @@ class User < ApplicationRecord
   has_many :answers , through: :answers_user
   accepts_nested_attributes_for :answers_user
   accepts_nested_attributes_for :answers
+
+  def answers_given 
+    answers_user.includes(:answer)
+  end
+
+  def correct_count
+    answers_given.select{|a_u| a_u.answer.true }.size
+  end
+
+  def false_count
+    answers_given.select{|a_u| !a_u.answer.true}.size
+  end
+
+  # def total_questions
+
+  # end
+
 end
