@@ -1,6 +1,6 @@
 <h1><%= @quiz.name %></h1>
 <ul>
-<%= current_user.correct_count %> out of <%= @quiz.total_questions %>
+<%= current_user.correct_count %> out of <%= @quiz.total_questions %> correct!
 
 <% current_user.answers_given.each do |a_u| %>
   <li>
