@@ -5,7 +5,7 @@
 <%= current_user.correct_count %> out of <%= @quiz.total_questions %> correct!
 <% end %>
 <% current_user.answers_given.each do |a_u| %>
-  <li class="answer">
+  <li>
     <%= a_u.answer.answertext %>, 
     <%= a_u.answer.true %>
     <% if !a_u.answer.true?  %>, the right answer is: 
@@ -19,7 +19,7 @@
 <%= form_for @quiz, :url => user_path do |f| %>
   <% if @quiz.questions.any? %>
     <%= f.hidden_field :id %>
-    <ol>
+    <ol class="answer">
       <%= f.fields_for :questions do |q_form| %>
         <img src=<%= q_form.object.image_url%> />
         <li><%= q_form.object.vraag %>
@@ -43,7 +43,9 @@
   <% else %>
     <p>There are no questions in this quiz (yet).</p>
   <% end %>
-  <%= f.submit %>
+  <%= f.submit "Submit your answers! " %>
 <% end %>
+<p>
 <%= link_to "[Edit]", edit_quiz_path(@quiz.id) %>
 <%= link_to "[Delete]", quiz_path(@quiz.id), method: :delete, data: { confirm: "Are you sure?" } %>
+</p>

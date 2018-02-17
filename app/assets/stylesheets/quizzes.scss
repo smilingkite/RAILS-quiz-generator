@@ -17,6 +17,22 @@ img {
 	max-width: 100%;
 }
 
-ul.answer  {
-  list-style-type: none;
+ol.answer {
+
+  padding: 1em 0;
+
+  ul {
+    padding: 1em 0;
+  }
+  li {
+    list-style-type: none;
+    padding: 1em 0;
+
+    ul li {
+      padding: 0;
+    }
+  }
+  label {
+    display: inline-block;
+  }
 }
