@@ -1,8 +1,5 @@
 # Quiz Generator
 
-## Projected database setup:
+Create an account to log in and do the 'Women in Computer Science' quiz!
 
-Log in with
-user: mail@katinkahesselink.net
-pw: 123456
 
