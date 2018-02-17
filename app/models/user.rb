@@ -21,8 +21,4 @@ class User < ApplicationRecord
     answers_given.select{|a_u| !a_u.answer.true}.size
   end
 
-  # def total_questions
-
-  # end
-
 end
