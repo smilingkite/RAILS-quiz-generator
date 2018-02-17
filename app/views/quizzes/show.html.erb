@@ -45,7 +45,5 @@
   <% end %>
   <%= f.submit "Submit your answers! " %>
 <% end %>
-<p>
-<%= link_to "[Edit]", edit_quiz_path(@quiz.id) %>
-<%= link_to "[Delete]", quiz_path(@quiz.id), method: :delete, data: { confirm: "Are you sure?" } %>
+
 </p>
