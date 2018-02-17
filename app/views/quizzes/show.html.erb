@@ -5,7 +5,7 @@
 <%= current_user.correct_count %> out of <%= @quiz.total_questions %> correct!
 <% end %>
 <% current_user.answers_given.each do |a_u| %>
-  <li>
+  <li class="answer">
     <%= a_u.answer.answertext %>, 
     <%= a_u.answer.true %>
     <% if !a_u.answer.true?  %>, the right answer is: 
